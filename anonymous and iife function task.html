@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1)
+        //a)using  anonymous function
+        var oddfunc=function(arr){
+            for(var i=0;i<arr.length;i++){
+                if(arr[i]%2!=0){
+                console.log(arr[i]) 
+            }
+        }
+    }
+    oddfunc ([1,2,3,4,5,6,7,8,9]);
+    //using iffe function
+
+    (function(arr){
+        for(var i=0;i<arr.length;i++){
+                if(arr[i]%2!=0){
+                console.log(arr[i]) 
+            }
+        }
+    }
+    )([1,2,3,4,5,6,7,8,9]);
+
+    //b) using anonymous function
+    var cap=function(str){
+        str=str.toLowerCase().split(' ');
+        for(var i=0;i<str.length;i++){
+        str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+
+        }
+        return str.join(' ');
+    }
+        
+    console.log(cap("life is beautiful"))
+    //using iffe function
+   //  (function(str)
+    
+  //  })('life is beautiful')
+  // b) using anonymous function
+    var sum=function(arr){
+        var t=0;
+        for(var i=0;i<arr.length;i++){
+            t+=arr[i]
+        }
+        return t;
+    }
+    console.log(sum([1,2,3,4,5,7,8,9,10]));
+// using iife function
+   (function(arr){
+    var t=0;
+    for(var val of arr){
+        t+=val;
+    }
+    console.log(t)
+}
+   )([1,2,3,4,5,7,8,9,10])
+// c) using anonymous function
+var prime=function(arr){
+    arr=arr.filter((number)=>{
+        for(var i=2;i<=Math.sqrt(number);i++){
+            if(number%i===0) {
+                return false;
+            }
+            else{
+                return true
+            }
+        }
+
+    });
+    console.log(arr)
+}
+prime([1,2,3,4,5,6,7,8,9])
+// using iife function
+(function(arr){
+    arr=arr.filter((number)=>{
+        for(var i=2;i<=Math.sqrt(number);i++){
+            if(number%i===0) {
+                return false;
+            }
+            else{
+                return true
+            }
+        }
+
+    });
+    console.log(arr)
+})([1,2,3,4,5,6,7,8,9])
+
+// e) amonymous function
+var palindrome=function(str){
+    var len= str.length;
+    var mid=Math.floor(len/2);
+    for(var i=0;i<mid;i++){
+        if(str[i]!==str[len-1-i]){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+}
+console.log(palindrome(['mom','dad','love','sky','wow']));
+// iife function
+(function(str){
+    var len= str.length;
+    var mid=Math.floor(len/2);
+    for(var i=0;i<mid;i++){
+        if(str[i]!==str[len-1-i]){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+}
+)(['mom','dad','love','sky','wow'])
+//g) using anonymous function
+var dup_arr=function(arr){
+    var duplicate=[...new Set(arr)];
+    console.log(duplicate);
+}
+dup_arr([1,3,3,4,4,5,6,7,6,5,5,4,3,3])
+(function(arr){
+    var duplicate=[...new Set(arr)];
+    console.log(duplicate);
+
+})([1,3,3,4,4,5,6,7,6,5,5,4,3,3])
+//h using anonymous function
+var  k_rotate=function(arr,N,k){
+   k = k % n;
+   for(var i=0;i<n;i++){
+    if(i<k){
+        console.log(a[n + i - k] + " ");
+    }
+    else{
+        console.log(a[i - k]+" ");
+    }
+}
+var arr=[1,2,3,4,5,6]
+var N=arr.length
+var k=2
+
+k_rotate(arr,N,k);
+//3)arrow functions
+//a)
+var odd_arrow_func=(arr)=>{
+    for(var i=0;i<arr.length;i++){
+                if(arr[i]%2!=0){
+                console.log(arr[i]) 
+            }
+        }
+    }
+    oddfunc ([1,2,3,4,5,6,7,8,9]);
+}
+//c)
+var sum=(arr)=>{
+    var t=0;
+        for(var i=0;i<arr.length;i++){
+            t+=arr[i]
+        }
+        return t;
+    }
+    console.log(sum([1,2,3,4,5,7,8,9,10]));
+
+//b)
+var cap_func=(arr)=>{
+
+    str=str.toLowerCase().split(' ');
+        for(var i=0;i<str.length;i++){
+        str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+
+        }
+        return str.join(' ');
+    }
+        
+    console.log(cap_func("life is beautiful"))
+
+//e)
+var palindrome_func=(arr)=>{
+    var len= str.length;
+    var mid=Math.floor(len/2);
+    for(var i=0;i<mid;i++){
+        if(str[i]!==str[len-1-i]){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+}
+console.log(palindrome(['mom','dad','love','sky','wow']));
+//d)
+var prime_func=(arr)=>{
+    arr=arr.filter((number)=>{
+        for(var i=2;i<=Math.sqrt(number);i++){
+            if(number%i===0) {
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+
+    });
+    console.log(arr)
+}
+prime_func([1,2,3,4,5,6,7,8,9])
+
+
+
+    
+
+
+    
+
+
+
+    </script>
+</body>
+</html>
